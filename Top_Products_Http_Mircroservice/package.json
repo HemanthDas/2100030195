@@ -1,0 +1,16 @@
+{
+  "name": "top_products_http_mircroservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express.js": "^1.0.0",
+    "nodemon": "^3.1.3"
+  }
+}
