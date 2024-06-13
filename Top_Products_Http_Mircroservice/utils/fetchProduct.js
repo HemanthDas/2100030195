@@ -1,4 +1,6 @@
 const { v4: uuidv4 } = require("uuid");
+
+// Function to fetch products from the API
 const getProduct = async (Bearer, n, categoryName, page = 1) => {
   try {
     const response = await fetch(
@@ -9,6 +11,8 @@ const getProduct = async (Bearer, n, categoryName, page = 1) => {
         },
       }
     );
+
+    // Check if the response is not successful
     if (!response.ok) {
       let errorMessage = "Unknown error occurred";
       if (response.status === 401) {
@@ -19,7 +23,10 @@ const getProduct = async (Bearer, n, categoryName, page = 1) => {
       return Error(errorMessage);
     }
 
+    // Parse the response as JSON
     let products = await response.json();
+
+    // Generate unique ids for each product
     let pid = 1;
     products = products.map((product) => ({
       ...product,
